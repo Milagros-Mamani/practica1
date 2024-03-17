@@ -22,13 +22,17 @@ print(f"Palabra: {word_displayed}")
 for i in range(max_attempts):
     # Pedir al jugador que ingrese una letra
      letter = input("Ingresa una letra: ").lower()
+     
+     #arreglo bug
+     if letter == "":
+         print ("valor invalido, ingrese otra letra.")
+         continue
+
     # Verificar si la letra ya ha sido adivinada
      if letter in guessed_letters:
         print("Ya has intentado con esa letra. Intenta con otra.")
         continue
     # Agregar la letra a la lista de letras adivinadas
-    #Nota: Por cada funcionalidad agregada se debe realizar al menos un commit que identifique
-    #el cambio.
      guessed_letters.append(letter)
 
      # Verificar si la letra está en la palabra secreta
@@ -36,6 +40,7 @@ for i in range(max_attempts):
          print("¡Bien hecho! La letra está en la palabra.")
      else:
          print("Lo siento, la letra no está en la palabra.")
+
 
      # Mostrar la palabra parcialmente adivinada
      letters = []
@@ -47,7 +52,7 @@ for i in range(max_attempts):
      word_displayed = "".join(letters)
      print(f"Palabra: {word_displayed}")
 
-     # Verificar si se ha adivinado la palabra completa
+    # Verificar si se ha adivinado la palabra completa
      if word_displayed == secret_word:
          print(f"¡Felicidades! Has adivinado la palabra secreta:{secret_word}")
          break
