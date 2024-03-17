@@ -20,6 +20,23 @@ word_displayed = "_" * len(secret_word)
 # Mostrarla palabra parcialmente adivinada
 print(f"Palabra: {word_displayed}")
 
+#implemento niveles de dificultad
+nivel_dificultad= input(print("Escoja el nivel de dificultad."))
+if nivel_dificultad == "facil":
+     vocales= ["a", "e", "i", "o", "u"]
+     vocales_secre= []
+     print("Las vocales que contienen la palabra a adivinar son:")
+     for letter in secret_word:
+         if letter in vocales:
+             if letter in vocales_secre:
+                 continue
+             else:
+                 vocales_secre.append(letter)
+                 print(letter)             
+else:
+     nivel_dificultad == "media"
+     print(f" la palabra empieza con  {secret_word[0]} y termina con {secret_word[(len(secret_word)) -1]}")
+
 while i<max_fallas:
     # Pedir al jugador que ingrese una letra
      letter = input("Ingresa una letra: ").lower()
