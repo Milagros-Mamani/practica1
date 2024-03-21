@@ -1,6 +1,6 @@
 import random
 # Lista de palabras posibles
-words = ["python", "programación", "computadora", "código", "desarrollo",
+words = ["python", "programacion", "computadora", "codigo", "desarrollo",
 "inteligencia"]
 
 # Elegir una palabra al azar
